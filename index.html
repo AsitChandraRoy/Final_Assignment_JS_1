@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>My to do list</title>
+</head>
+
+<body class="bg-gray-50">
+    <div class="container mx-auto text-center mt-5 shadow-lg rounded-lg pb-7">
+        <div class="p-5" id="input-container">
+            <h1 class="text-3xl text-violet-500 font-bold">To do list</h1>
+            <div class="flex justify-center items-center">
+                <input id="inputBox" class="border rounded-md px-4 py-2 mt-2 bg-[#ffffff]" type="text"
+                    placeholder="Add a task ...">
+                <input type="hidden" id="saveIndex">
+                <input id="addBtn"
+                    class="border rounded-md px-4 py-2 mt-2 text-white bg-lime-500 cursor-pointer hover:bg-[#60b160]"
+                    type="button" value="Add">
+
+                <input id="saveBtn"
+                    class="hidden border rounded-md px-4 py-2 mt-2 text-white bg-lime-500 cursor-pointer hover:bg-[#60b160]"
+                    type="button" value="Save">
+            </div>
+        </div>
+
+
+        <ul id="todoList">
+            <!-- <li class="border w-96 mx-auto flex justify-between items-center py-2 px-2 rounded-md bg-[#ffffff]">
+                <p class="flex-grow text-start">list 1</p>
+                <button class="bg-green-500 rounded-md px-5 py-2 me-2 hover:bg-green-600">Edit</button>
+                <button class="bg-red-500 rounded-md px-3 py-2 hover:bg-red-700">delete</button>
+            </li> -->
+        </ul>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
