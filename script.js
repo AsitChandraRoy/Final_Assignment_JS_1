@@ -6,7 +6,6 @@ let editTodo = null;
 
 // add to do Function
 const addTodo = () => {
-  // @ts-ignore
   const inputText = inputBox?.value.trim();
   if (inputText.length <= 0) {
     alert("input a task");
@@ -14,12 +13,9 @@ const addTodo = () => {
     return 0;
   }
 
-  // @ts-ignore
   if (addBtn?.value === "Edit") {
     editTodo.target.previousElementSibling.innerHTML = inputText;
-    // @ts-ignore
     addBtn.value = "Add";
-    // @ts-ignore
     inputBox.value = "";
   } else {
     // creating p tag
@@ -52,7 +48,6 @@ const addTodo = () => {
     );
 
     todoList?.appendChild(li);
-    // @ts-ignore
     inputBox.value = "";
   }
 };
@@ -64,11 +59,8 @@ const updateTodo = (e) => {
   }
 
   if (e.target.innerHTML === "Edit") {
-    // @ts-ignore
     inputBox.value = e.target.previousElementSibling.innerHTML;
-    // @ts-ignore
     inputBox?.focus();
-    // @ts-ignore
     addBtn.value = "Edit";
     editTodo = e;
   }
