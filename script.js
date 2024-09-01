@@ -6,16 +6,20 @@ let editTodo = null;
 
 // add to do Function
 const addTodo = () => {
-  const inputText = inputBox.value.trim();
+  // @ts-ignore
+  const inputText = inputBox?.value.trim();
   if (inputText.length <= 0) {
     alert("input a task");
 
     return 0;
   }
 
-  if (addBtn.value === "Edit") {
+  // @ts-ignore
+  if (addBtn?.value === "Edit") {
     editTodo.target.previousElementSibling.innerHTML = inputText;
+    // @ts-ignore
     addBtn.value = "Add";
+    // @ts-ignore
     inputBox.value = "";
   } else {
     // creating p tag
@@ -47,7 +51,8 @@ const addTodo = () => {
       "bg-red-500 hover:bg-red-700 rounded-md px-3 py-2"
     );
 
-    todoList.appendChild(li);
+    todoList?.appendChild(li);
+    // @ts-ignore
     inputBox.value = "";
   }
 };
@@ -55,16 +60,19 @@ const addTodo = () => {
 // Func to update : Edit/Delete to do
 const updateTodo = (e) => {
   if (e.target.innerHTML === "Delete") {
-    todoList.removeChild(e.target.parentElement);
+    todoList?.removeChild(e.target.parentElement);
   }
 
   if (e.target.innerHTML === "Edit") {
+    // @ts-ignore
     inputBox.value = e.target.previousElementSibling.innerHTML;
-    inputBox.focus();
+    // @ts-ignore
+    inputBox?.focus();
+    // @ts-ignore
     addBtn.value = "Edit";
     editTodo = e;
   }
 };
 
-addBtn.addEventListener("click", addTodo);
-todoList.addEventListener("click", updateTodo);
+addBtn?.addEventListener("click", addTodo);
+todoList?.addEventListener("click", updateTodo);
